@@ -41,7 +41,7 @@ const AppNavigator = () => {
           headerShown: false,
           tabBarShowLabel: false,
         }}>
-        <Tab.Screen name="Home" component={HomeStack} />
+        <Tab.Screen name="HomeStack" component={HomeStack} />
         <Tab.Screen name="Wishlist" component={WishListScreen} />
       </Tab.Navigator>
     </NavigationContainer>

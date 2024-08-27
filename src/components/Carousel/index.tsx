@@ -4,6 +4,7 @@ import { Text } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { useGetMoviesByGenreQuery } from '../../store/services/tmdbApi';
 import { useAppNavigation } from '../../navigation/AppNavigator';
+import { responsiveScreenHeight } from 'react-native-responsive-dimensions';
 
 interface CarouselProps {
   genreId: number;
@@ -45,24 +46,26 @@ export default function Carousel({ genreId, genreName }: CarouselProps) {
 }
 
 const Container = styled.View`
-  margin-vertical: 8px;
+  margin-bottom: 4px;
   padding-horizontal: 5px;
+  height: ${responsiveScreenHeight(26)}px;
 `;
 
 const GenreName = styled.Text`
   font-size: 18px;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
+  padding-left: 4px;
 `;
 
 const MovieCard = styled.TouchableOpacity`
-  margin-right: 10px;
+  margin-right: 6px;
   align-items: center;
 `;
 
 const Poster = styled.Image`
-  width: 100px;
-  height: 150px;
+  height: ${responsiveScreenHeight(16)};
+  aspect-ratio: 0.6;
   border-radius: 8px;
 `;
 
