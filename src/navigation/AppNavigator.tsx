@@ -1,22 +1,49 @@
 import React from 'react';
-import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 import HomeScreen from '../screens/HomeScreen';
 import WishListScreen from '../screens/WishListScreen';
 import FilmDetailScreen from '../screens/FilmDetailScreen';
+import Header from '../components/Header';
 
-const Drawer = createDrawerNavigator();
+const Tab = createBottomTabNavigator();
+const Stack = createNativeStackNavigator();
+
+const HomeStack = () => {
+  return (
+    <>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{
+            header: () => <Header />,
+          }}
+        />
+        <Stack.Screen
+          name="MovieDetailsScreen"
+          component={FilmDetailScreen}
+          options={{ headerShown: false }}
+        />
+      </Stack.Navigator>
+    </>
+  );
+};
 
 const AppNavigator = () => {
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="Home">
-        <Drawer.Screen name="Home" component={HomeScreen} />
-        <Drawer.Screen name="FilmDetail" component={FilmDetailScreen} />
-        <Drawer.Screen name="Wishlist" component={WishListScreen} />
-      </Drawer.Navigator>
+      <Tab.Navigator
+        screenOptions={{
+          headerShown: false,
+          tabBarShowLabel: false,
+        }}>
+        <Tab.Screen name="Home" component={HomeStack} />
+        <Tab.Screen name="Wishlist" component={WishListScreen} />
+      </Tab.Navigator>
     </NavigationContainer>
   );
 };

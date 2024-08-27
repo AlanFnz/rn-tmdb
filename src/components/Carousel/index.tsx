@@ -3,6 +3,7 @@ import styled from 'styled-components/native';
 import { Text } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { useGetMoviesByGenreQuery } from '../../store/services/tmdbApi';
+import { useAppNavigation } from '../../navigation/AppNavigator';
 
 interface CarouselProps {
   genreId: number;
@@ -10,7 +11,13 @@ interface CarouselProps {
 }
 
 export default function Carousel({ genreId, genreName }: CarouselProps) {
+  const navigation = useAppNavigation();
+
   const { data: movies, error, isLoading } = useGetMoviesByGenreQuery(genreId);
+
+  const handleMovieClick = (movieId: number) => {
+    navigation.navigate('MovieDetailsScreen', { movieId });
+  };
 
   if (isLoading) return <Text>Loading...</Text>;
   if (error) return <Text>Error loading movies.</Text>;
@@ -21,13 +28,15 @@ export default function Carousel({ genreId, genreName }: CarouselProps) {
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
         {movies &&
           movies.map(movie => (
-            <MovieCard key={movie.id} onPress={() => {}}>
+            <MovieCard
+              key={movie.id}
+              onPress={() => handleMovieClick(movie.id)}>
               <Poster
                 source={{
                   uri: `https://image.tmdb.org/t/p/w200/${movie.poster_path}`, // FIXME: would be nice to not have to hardcode the first part of the url
                 }}
               />
-              <MovieTitle>{movie.title}</MovieTitle>
+              <MovieTitle numberOfLines={2}>{movie.title}</MovieTitle>
             </MovieCard>
           ))}
       </ScrollView>
@@ -36,7 +45,8 @@ export default function Carousel({ genreId, genreName }: CarouselProps) {
 }
 
 const Container = styled.View`
-  margin-vertical: 10px;
+  margin-vertical: 8px;
+  padding-horizontal: 5px;
 `;
 
 const GenreName = styled.Text`
