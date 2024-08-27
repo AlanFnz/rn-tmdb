@@ -2,27 +2,26 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Movie } from '../services/tmdbApi';
 
 interface WishlistState {
-  wishlist: Movie[];
+  items: Movie[];
 }
 
 const initialState: WishlistState = {
-  wishlist: [],
+  items: [],
 };
 
 const wishlistSlice = createSlice({
   name: 'wishlist',
   initialState,
   reducers: {
-    addToWishlist: (state, action: PayloadAction<Movie>) => {
-      state.wishlist.push(action.payload);
+    addToWishList: (state, action: PayloadAction<Movie>) => {
+      state.items.push(action.payload);
     },
-    removeFromWishlist: (state, action: PayloadAction<number>) => {
-      state.wishlist = state.wishlist.filter(
-        movie => movie.id !== action.payload,
-      );
+    removeFromWishList: (state, action: PayloadAction<number>) => {
+      state.items = state.items.filter(movie => movie.id !== action.payload); // Remove by movie ID
     },
   },
 });
 
-export const { addToWishlist, removeFromWishlist } = wishlistSlice.actions;
+export const { addToWishList, removeFromWishList } = wishlistSlice.actions;
+
 export default wishlistSlice.reducer;

@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import { useRoute } from '@react-navigation/native';
-import { useGetMovieDetailsQuery } from '../../store/services/tmdbApi';
+import { Movie, useGetMovieDetailsQuery } from '../../store/services/tmdbApi';
 import { Text } from 'react-native';
 import { responsiveScreenHeight } from 'react-native-responsive-dimensions';
 import { ScrollView } from 'react-native-gesture-handler';
+import WishListButton from '../WishListScreen/components/WishListButton';
 interface RouteParams {
   movieId: number;
 }
@@ -35,9 +36,7 @@ export default function FilmDetailScreen() {
           <DescriptionTextContainer>
             <Description>{movieDetails.overview}</Description>
           </DescriptionTextContainer>
-          <AddButton onPress={() => addToWishList(movieDetails.id)}>
-            <ButtonText>Add to Wish List</ButtonText>
-          </AddButton>
+          <WishListButton movie={movieDetails as Movie} />
         </DescriptionContainer>
       </TopContainer>
 
@@ -48,10 +47,6 @@ export default function FilmDetailScreen() {
     </Container>
   );
 }
-
-const addToWishList = (movieId: number) => {
-  console.log(`Movie with ID: ${movieId} added to the wish list.`);
-};
 
 const Container = styled.ScrollView.attrs(() => ({
   contentContainerStyle: {
