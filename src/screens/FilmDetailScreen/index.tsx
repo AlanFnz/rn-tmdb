@@ -2,21 +2,15 @@ import React from 'react';
 import styled from 'styled-components/native';
 import { useRoute } from '@react-navigation/native';
 import { useGetMovieDetailsQuery } from '../../store/services/tmdbApi';
-import { ScrollViewProps, Text } from 'react-native';
-import {
-  responsiveScreenHeight,
-  responsiveScreenWidth,
-} from 'react-native-responsive-dimensions';
+import { Text } from 'react-native';
+import { responsiveScreenHeight } from 'react-native-responsive-dimensions';
 import { ScrollView } from 'react-native-gesture-handler';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
-
 interface RouteParams {
   movieId: number;
 }
 
 export default function FilmDetailScreen() {
   const route = useRoute();
-  const insets = useSafeAreaInsets();
   const { movieId } = route.params as RouteParams;
 
   const {
@@ -58,13 +52,6 @@ export default function FilmDetailScreen() {
 const addToWishList = (movieId: number) => {
   console.log(`Movie with ID: ${movieId} added to the wish list.`);
 };
-
-interface ContainerProps extends ScrollViewProps {
-  insets: {
-    left: number;
-    right: number;
-  };
-}
 
 const Container = styled.ScrollView.attrs(() => ({
   contentContainerStyle: {
