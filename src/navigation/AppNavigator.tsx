@@ -26,7 +26,9 @@ const HomeStack = () => {
         <Stack.Screen
           name="MovieDetailsScreen"
           component={FilmDetailScreen}
-          options={{ headerShown: false }}
+          options={{
+            header: () => <Header />,
+          }}
         />
       </Stack.Navigator>
     </>
