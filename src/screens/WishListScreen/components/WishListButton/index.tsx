@@ -9,9 +9,15 @@ import { Movie } from '../../../../store/services/tmdbApi';
 
 interface WishListButtonProps {
   movie: Movie;
+  buttonColor?: string;
+  borderRadius?: string;
 }
 
-export default function WishListButton({ movie }: WishListButtonProps) {
+export default function WishListButton({
+  movie,
+  buttonColor = '#3b5998',
+  borderRadius = '5px',
+}: WishListButtonProps) {
   const dispatch = useAppDispatch();
   const wishList = useAppSelector(state => state.wishlist.items);
 
@@ -28,7 +34,10 @@ export default function WishListButton({ movie }: WishListButtonProps) {
   };
 
   return (
-    <Button onPress={handleToggleWishList}>
+    <Button
+      onPress={handleToggleWishList}
+      buttonColor={buttonColor}
+      borderRadius={borderRadius}>
       <ButtonText isInWishList={isInWishList}>
         {isInWishList ? 'Remove from Wishlist' : 'Add to Wishlist'}
       </ButtonText>
@@ -36,13 +45,16 @@ export default function WishListButton({ movie }: WishListButtonProps) {
   );
 }
 
-const Button = styled.TouchableOpacity`
-  background-color: #3b5998;
+const Button = styled.TouchableOpacity<{
+  buttonColor: string;
+  borderRadius: string;
+}>`
+  background-color: ${props => props.buttonColor};
   padding: 10px;
-  border-radius: 5px;
+  border-radius: ${props => props.borderRadius};
   align-items: center;
-  height: 48px;
   justify-content: center;
+  height: 48px;
 `;
 
 const ButtonText = styled.Text<{ isInWishList: boolean }>`

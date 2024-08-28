@@ -1,6 +1,22 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { RootState } from '..';
 import axiosInstance from '../../api/axiosInstance';
+
+interface ImageConfig {
+  base_url: string;
+  secure_base_url: string;
+  backdrop_sizes: string[];
+  poster_sizes: string[];
+}
+
+interface ConfigState {
+  images: ImageConfig | null;
+  status: 'idle' | 'loading' | 'failed';
+}
+
+const initialState: ConfigState = {
+  images: null,
+  status: 'idle',
+};
 
 export const fetchConfig = createAsyncThunk('config/fetchConfig', async () => {
   const response = await axiosInstance.get('configuration');
@@ -9,13 +25,7 @@ export const fetchConfig = createAsyncThunk('config/fetchConfig', async () => {
 
 const configSlice = createSlice({
   name: 'config',
-  initialState: {
-    images: {
-      secure_base_url: '',
-      poster_sizes: [],
-    },
-    status: 'idle',
-  },
+  initialState,
   reducers: {},
   extraReducers: builder => {
     builder
@@ -23,12 +33,16 @@ const configSlice = createSlice({
         state.status = 'loading';
       })
       .addCase(fetchConfig.fulfilled, (state, action) => {
+        state.status = 'idle';
         state.images = action.payload;
-        state.status = 'succeeded';
+      })
+      .addCase(fetchConfig.rejected, state => {
+        state.status = 'failed';
       });
   },
 });
 
-export const selectImageConfig = (state: RootState) => state.config.images;
+export const selectImageConfig = (state: { config: ConfigState }) =>
+  state.config.images;
 
 export default configSlice.reducer;

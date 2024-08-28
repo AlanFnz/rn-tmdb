@@ -18,8 +18,13 @@ export default function HomeScreen() {
   return (
     <Container insets={insets}>
       {selectedGenres && selectedGenres.length > 0 ? (
-        selectedGenres.map(genre => (
-          <Carousel key={genre.id} genreId={genre.id} genreName={genre.name} />
+        selectedGenres.map((genre, index) => (
+          <Carousel
+            key={genre.id}
+            genreId={genre.id}
+            genreName={genre.name}
+            genreIndex={index}
+          />
         ))
       ) : (
         <NoMoviesText>No movies in this genre.</NoMoviesText>

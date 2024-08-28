@@ -10,15 +10,16 @@ import Poster from '../Poster';
 interface CarouselProps {
   genreId: number;
   genreName: string;
+  genreIndex: number;
 }
 
-export default function Carousel({ genreId, genreName }: CarouselProps) {
+export default function Carousel({ genreId, genreName, genreIndex }: CarouselProps) {
   const navigation = useAppNavigation();
 
   const { data: movies, error, isLoading } = useGetMoviesByGenreQuery(genreId);
 
   const handleMovieClick = (movieId: number) => {
-    navigation.navigate('MovieDetailsScreen', { movieId });
+    navigation.navigate('MovieDetailsScreen', { movieId, genreIndex });
   };
 
   if (isLoading) return <Text>Loading...</Text>;

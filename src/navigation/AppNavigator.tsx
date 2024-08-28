@@ -52,7 +52,7 @@ const AppNavigator = () => {
 
 export type RootStackParamList = {
   Home: undefined;
-  MovieDetailsScreen: { movieId: number };
+  MovieDetailsScreen: { movieId: number; genreIndex: number };
   Wishlist: undefined;
 };
 
