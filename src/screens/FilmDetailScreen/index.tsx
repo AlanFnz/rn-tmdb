@@ -48,7 +48,9 @@ export default function FilmDetailScreen() {
         <FilmDetailPoster posterPath={movieDetails.poster_path} sizeIndex={4} />
         <DescriptionContainer>
           <DescriptionTextContainer>
-            <Description fontFamily={dynamicStyles.fontFamily} />
+            <Description fontFamily={dynamicStyles.fontFamily}>
+              {movieDetails.overview}
+            </Description>
           </DescriptionTextContainer>
           <WishListButton
             movie={movieDetails as Movie}
@@ -129,17 +131,17 @@ const InfoText = styled.Text`
 const getStylesByIndex = (index: number) => {
   const styles = [
     {
-      fontFamily: 'Helvetica',
+      fontFamily: 'Kanit-Regular',
       buttonColor: '#ff6347',
       borderRadius: '5px',
     },
     {
-      fontFamily: 'Arial',
+      fontFamily: 'Montserrat-Regular',
       buttonColor: '#4682b4',
       borderRadius: '10px',
     },
     {
-      fontFamily: 'Courier New',
+      fontFamily: 'Roboto-Regular',
       buttonColor: '#32cd32',
       borderRadius: '15px',
     },

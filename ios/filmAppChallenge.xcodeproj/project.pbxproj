@@ -15,6 +15,9 @@
 		7699B88040F8A987B510C191 /* libPods-filmAppChallenge-filmAppChallengeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-filmAppChallenge-filmAppChallengeTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		B2B71A97D177C72FD0333980 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = E4E076034660FCD07860C898 /* PrivacyInfo.xcprivacy */; };
+		102F1D301E8A43B39515D555 /* Kanit-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F59B6C63668643E4B03CC626 /* Kanit-Regular.ttf */; };
+		D61FFEB5107C48998847C82D /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6127D662BD00443892523DE2 /* Montserrat-Regular.ttf */; };
+		F27E7D43EB88439D83A1D8F0 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D91A66CEFBD24D57A6D9045A /* Roboto-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		89C6BE57DB24E9ADA2F236DE /* Pods-filmAppChallenge-filmAppChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-filmAppChallenge-filmAppChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-filmAppChallenge-filmAppChallengeTests/Pods-filmAppChallenge-filmAppChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		E4E076034660FCD07860C898 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = filmAppChallenge/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		F59B6C63668643E4B03CC626 /* Kanit-Regular.ttf */ = {isa = PBXFileReference; name = "Kanit-Regular.ttf"; path = "../assets/fonts/Kanit-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6127D662BD00443892523DE2 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; name = "Montserrat-Regular.ttf"; path = "../assets/fonts/Montserrat-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D91A66CEFBD24D57A6D9045A /* Roboto-Regular.ttf */ = {isa = PBXFileReference; name = "Roboto-Regular.ttf"; path = "../assets/fonts/Roboto-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +133,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				F9F8FCA63F1F43B99341DB6E /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -152,6 +159,17 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		F9F8FCA63F1F43B99341DB6E /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				F59B6C63668643E4B03CC626 /* Kanit-Regular.ttf */,
+				6127D662BD00443892523DE2 /* Montserrat-Regular.ttf */,
+				D91A66CEFBD24D57A6D9045A /* Roboto-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -249,6 +267,9 @@
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				B2B71A97D177C72FD0333980 /* PrivacyInfo.xcprivacy in Resources */,
+				102F1D301E8A43B39515D555 /* Kanit-Regular.ttf in Resources */,
+				D61FFEB5107C48998847C82D /* Montserrat-Regular.ttf in Resources */,
+				F27E7D43EB88439D83A1D8F0 /* Roboto-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
