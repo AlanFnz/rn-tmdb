@@ -4,16 +4,18 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Text, View } from 'react-native';
 import { useGetGenresQuery } from '../../store/services/tmdbApi';
 import Carousel from '../../components/Carousel';
+import MessageDisplay from '../../components/MessageDisplay';
+import LoadingDisplay from '../../components/LoadingDisplay';
 
 export default function HomeScreen() {
   const { data: genres, error, isLoading } = useGetGenresQuery();
   const insets = useSafeAreaInsets();
 
-  if (isLoading) return <Text>Loading...</Text>;
-  if (error) return <Text>Failed to load genres.</Text>;
+  if (isLoading) return <LoadingDisplay />;
+  if (error) return <MessageDisplay message={'Failed to load movies.'} />;
 
   // arbitrarily extracting three genres to meet the challenge requirement
-  const selectedGenres = genres && genres.genres.slice(0, 3);
+  const selectedGenres = genres?.genres?.slice(0, 3) || [];
 
   return (
     <Container insets={insets}>

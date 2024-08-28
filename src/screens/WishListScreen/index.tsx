@@ -7,6 +7,7 @@ import { removeFromWishList } from '../../store/slices/wishlistSlice';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Poster from '../../components/Poster';
 import colors from '../../theme/colors';
+import MessageDisplay from '../../components/MessageDisplay';
 
 export default function WishListScreen() {
   const dispatch = useAppDispatch();
@@ -17,13 +18,8 @@ export default function WishListScreen() {
     dispatch(removeFromWishList(movieId));
   };
 
-  if (wishList.length === 0) {
-    return (
-      <NoItemsContainer>
-        <NoItemsText>Your wishlist is empty.</NoItemsText>
-      </NoItemsContainer>
-    );
-  }
+  if (wishList.length === 0)
+    return <MessageDisplay message={'Your wishlist is empty'} />;
 
   return (
     <View style={{ paddingTop: insets.top }}>

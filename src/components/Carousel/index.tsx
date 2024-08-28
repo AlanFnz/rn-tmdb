@@ -6,6 +6,8 @@ import { useGetMoviesByGenreQuery } from '../../store/services/tmdbApi';
 import { useAppNavigation } from '../../navigation/AppNavigator';
 import { responsiveScreenHeight } from 'react-native-responsive-dimensions';
 import Poster from '../Poster';
+import MessageDisplay from '../MessageDisplay';
+import LoadingDisplay from '../LoadingDisplay';
 import colors from '../../theme/colors';
 
 interface CarouselProps {
@@ -27,8 +29,8 @@ export default function Carousel({
     navigation.navigate('MovieDetailsScreen', { movieId, genreIndex });
   };
 
-  if (isLoading) return <Text>Loading...</Text>;
-  if (error) return <Text>Error loading movies.</Text>;
+  if (isLoading) return <LoadingDisplay />;
+  if (error) return <MessageDisplay message={'Error loading movies.'} />;
 
   return (
     <Container>

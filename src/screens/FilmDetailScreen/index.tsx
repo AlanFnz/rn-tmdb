@@ -16,6 +16,8 @@ import { selectImageConfig } from '../../store/slices/configurationSlice';
 import WishListButton from '../WishListScreen/components/WishListButton';
 import Poster from '../../components/Poster';
 import colors from '../../theme/colors';
+import MessageDisplay from '../../components/MessageDisplay';
+import LoadingDisplay from '../../components/LoadingDisplay';
 
 interface RouteParams {
   movieId: number;
@@ -33,9 +35,9 @@ export default function FilmDetailScreen() {
   } = useGetMovieDetailsQuery(movieId);
   const imageConfig = useSelector(selectImageConfig);
 
-  if (isLoading) return <Text>Loading...</Text>;
+  if (isLoading) return <LoadingDisplay />;
   if (error || !movieDetails || !imageConfig)
-    return <Text>Failed to load movie details.</Text>;
+    return <MessageDisplay message={'Failed to load movie details.'} />;
 
   const backdropUrl = `${imageConfig.secure_base_url}${imageConfig.backdrop_sizes[2]}${movieDetails.backdrop_path}`;
   const dynamicStyles = getStylesByIndex(genreIndex);
