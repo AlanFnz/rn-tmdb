@@ -2,11 +2,13 @@ import { configureStore } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import { tmdbApi } from './services/tmdbApi';
 import wishlistReducer from './slices/wishlistSlice';
+import configReducer from './slices/configurationSlice';
 
 const store = configureStore({
   reducer: {
     [tmdbApi.reducerPath]: tmdbApi.reducer,
     wishlist: wishlistReducer,
+    config: configReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware().concat(tmdbApi.middleware),
