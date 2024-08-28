@@ -1,4 +1,5 @@
 import React from 'react';
+import { Platform } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
@@ -49,10 +50,10 @@ const AppNavigator = () => {
             marginBottom: 10,
           },
           tabBarStyle: {
-            height: 70,
+            height: Platform.OS === 'android' ? 40 : 70,
           },
-          tabBarActiveTintColor: colors.primary, 
-          tabBarInactiveTintColor: colors.secondary, 
+          tabBarActiveTintColor: colors.primary,
+          tabBarInactiveTintColor: colors.secondary,
         }}>
         <Tab.Screen
           name="HomeStack"
