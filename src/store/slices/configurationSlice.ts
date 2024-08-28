@@ -6,6 +6,7 @@ interface ImageConfig {
   secure_base_url: string;
   backdrop_sizes: string[];
   poster_sizes: string[];
+  logo_sizes: string[];
 }
 
 interface ConfigState {

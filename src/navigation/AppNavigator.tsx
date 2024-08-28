@@ -8,6 +8,7 @@ import HomeScreen from '../screens/HomeScreen';
 import WishListScreen from '../screens/WishListScreen';
 import FilmDetailScreen from '../screens/FilmDetailScreen';
 import Header from '../components/Header';
+import colors from '../theme/colors';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -41,10 +42,34 @@ const AppNavigator = () => {
       <Tab.Navigator
         screenOptions={{
           headerShown: false,
-          tabBarShowLabel: false,
+          tabBarShowLabel: true,
+          tabBarLabelStyle: {
+            fontSize: 16,
+            fontWeight: 'bold',
+            marginBottom: 10,
+          },
+          tabBarStyle: {
+            height: 70,
+          },
+          tabBarActiveTintColor: colors.primary, 
+          tabBarInactiveTintColor: colors.secondary, 
         }}>
-        <Tab.Screen name="HomeStack" component={HomeStack} />
-        <Tab.Screen name="Wishlist" component={WishListScreen} />
+        <Tab.Screen
+          name="HomeStack"
+          component={HomeStack}
+          options={{
+            tabBarLabel: 'Home',
+            tabBarIcon: () => null,
+          }}
+        />
+        <Tab.Screen
+          name="Wishlist"
+          component={WishListScreen}
+          options={{
+            tabBarLabel: 'Wishlist',
+            tabBarIcon: () => null,
+          }}
+        />
       </Tab.Navigator>
     </NavigationContainer>
   );

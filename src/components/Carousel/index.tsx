@@ -6,6 +6,7 @@ import { useGetMoviesByGenreQuery } from '../../store/services/tmdbApi';
 import { useAppNavigation } from '../../navigation/AppNavigator';
 import { responsiveScreenHeight } from 'react-native-responsive-dimensions';
 import Poster from '../Poster';
+import colors from '../../theme/colors';
 
 interface CarouselProps {
   genreId: number;
@@ -13,7 +14,11 @@ interface CarouselProps {
   genreIndex: number;
 }
 
-export default function Carousel({ genreId, genreName, genreIndex }: CarouselProps) {
+export default function Carousel({
+  genreId,
+  genreName,
+  genreIndex,
+}: CarouselProps) {
   const navigation = useAppNavigation();
 
   const { data: movies, error, isLoading } = useGetMoviesByGenreQuery(genreId);
@@ -52,6 +57,7 @@ const Container = styled.View`
 const GenreName = styled.Text`
   font-size: 18px;
   font-weight: bold;
+  color: ${colors.secondary};
   margin-bottom: 6px;
   padding-left: 4px;
 `;
@@ -69,6 +75,7 @@ const CarouselPoster = styled(Poster)`
 
 const MovieTitle = styled.Text`
   text-align: center;
+  color: ${colors.secondary};
   width: 100px;
   margin-top: 5px;
 `;

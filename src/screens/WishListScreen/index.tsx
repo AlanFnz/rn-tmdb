@@ -6,6 +6,7 @@ import { Movie } from '../../store/services/tmdbApi';
 import { removeFromWishList } from '../../store/slices/wishlistSlice';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Poster from '../../components/Poster';
+import colors from '../../theme/colors';
 
 export default function WishListScreen() {
   const dispatch = useAppDispatch();
@@ -65,15 +66,11 @@ const MovieInfo = styled.View`
 const MovieTitle = styled.Text`
   font-size: 18px;
   font-weight: bold;
-`;
-
-const MovieRating = styled.Text`
-  font-size: 14px;
-  margin-top: 5px;
+  color: ${colors.secondary};
 `;
 
 const RemoveButton = styled.TouchableOpacity`
-  background-color: red;
+  background-color: ${colors.primary};
   padding: 5px 10px;
   border-radius: 5px;
   margin-top: 10px;
