@@ -6,6 +6,8 @@ import { Text } from 'react-native';
 import { responsiveScreenHeight } from 'react-native-responsive-dimensions';
 import { ScrollView } from 'react-native-gesture-handler';
 import WishListButton from '../WishListScreen/components/WishListButton';
+import Poster from '../../components/Poster';
+
 interface RouteParams {
   movieId: number;
 }
@@ -26,12 +28,7 @@ export default function FilmDetailScreen() {
   return (
     <Container>
       <TopContainer>
-        <Poster
-          source={{
-            uri: `https://image.tmdb.org/t/p/w500/${movieDetails.poster_path}`,
-          }}
-          resizeMode="cover"
-        />
+        <FilmDetailPoster posterPath={movieDetails.poster_path} sizeIndex={4} />
         <DescriptionContainer>
           <DescriptionTextContainer>
             <Description>{movieDetails.overview}</Description>
@@ -39,7 +36,6 @@ export default function FilmDetailScreen() {
           <WishListButton movie={movieDetails as Movie} />
         </DescriptionContainer>
       </TopContainer>
-
       <AdditionalInfo>
         <InfoText>Release Date: {movieDetails.release_date}</InfoText>
         <InfoText>Rating: {movieDetails.vote_average}</InfoText>
@@ -64,7 +60,7 @@ const TopContainer = styled.View`
   height: ${responsiveScreenHeight(38)}px;
 `;
 
-const Poster = styled.Image`
+const FilmDetailPoster = styled(Poster)`
   height: 92%;
   aspect-ratio: 0.7;
   border-radius: 10px;
@@ -89,19 +85,6 @@ const Description = styled.Text`
   font-size: 14px;
   margin-bottom: 20px;
   line-height: 22px;
-`;
-
-const AddButton = styled.TouchableOpacity`
-  background-color: #3b5998;
-  padding: 10px;
-  border-radius: 5px;
-  align-items: center;
-`;
-
-const ButtonText = styled.Text`
-  color: white;
-  font-size: 14px;
-  font-weight: bold;
 `;
 
 const AdditionalInfo = styled.View`

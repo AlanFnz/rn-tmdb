@@ -5,6 +5,7 @@ import { useAppDispatch, useAppSelector } from '../../store';
 import { Movie } from '../../store/services/tmdbApi';
 import { removeFromWishList } from '../../store/slices/wishlistSlice';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import Poster from '../../components/Poster';
 
 export default function WishListScreen() {
   const dispatch = useAppDispatch();
@@ -28,11 +29,7 @@ export default function WishListScreen() {
       <ScrollView>
         {wishList.map((movie: Movie) => (
           <MovieContainer key={movie.id}>
-            <Poster
-              source={{
-                uri: `https://image.tmdb.org/t/p/w200/${movie.poster_path}`,
-              }}
-            />
+            <WishListPoster posterPath={movie.poster_path} sizeIndex={1} />
             <MovieInfo>
               <MovieTitle>{movie.title}</MovieTitle>
               <RemoveButton onPress={() => handleRemove(movie.id)}>
@@ -54,7 +51,7 @@ const MovieContainer = styled.View`
   border-bottom-color: #ccc;
 `;
 
-const Poster = styled.Image`
+const WishListPoster = styled(Poster)`
   width: 80px;
   height: 120px;
   border-radius: 8px;

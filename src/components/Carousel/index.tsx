@@ -5,6 +5,7 @@ import { ScrollView } from 'react-native-gesture-handler';
 import { useGetMoviesByGenreQuery } from '../../store/services/tmdbApi';
 import { useAppNavigation } from '../../navigation/AppNavigator';
 import { responsiveScreenHeight } from 'react-native-responsive-dimensions';
+import Poster from '../Poster';
 
 interface CarouselProps {
   genreId: number;
@@ -32,11 +33,7 @@ export default function Carousel({ genreId, genreName }: CarouselProps) {
             <MovieCard
               key={movie.id}
               onPress={() => handleMovieClick(movie.id)}>
-              <Poster
-                source={{
-                  uri: `https://image.tmdb.org/t/p/w200/${movie.poster_path}`, // FIXME: would be nice to not have to hardcode the first part of the url
-                }}
-              />
+              <CarouselPoster posterPath={movie.poster_path} sizeIndex={1} />
               <MovieTitle numberOfLines={2}>{movie.title}</MovieTitle>
             </MovieCard>
           ))}
@@ -63,8 +60,8 @@ const MovieCard = styled.TouchableOpacity`
   align-items: center;
 `;
 
-const Poster = styled.Image`
-  height: ${responsiveScreenHeight(16)};
+const CarouselPoster = styled(Poster)`
+  height: ${responsiveScreenHeight(16)}px;
   aspect-ratio: 0.6;
   border-radius: 8px;
 `;
