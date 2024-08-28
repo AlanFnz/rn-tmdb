@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* filmAppChallengeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* filmAppChallengeTests.m */; };
 		0C80B921A6F3F58F76C31292 /* libPods-filmAppChallenge.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-filmAppChallenge.a */; };
+		102F1D301E8A43B39515D555 /* Kanit-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F59B6C63668643E4B03CC626 /* Kanit-Regular.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-filmAppChallenge-filmAppChallengeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-filmAppChallenge-filmAppChallengeTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		B2B71A97D177C72FD0333980 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = E4E076034660FCD07860C898 /* PrivacyInfo.xcprivacy */; };
-		102F1D301E8A43B39515D555 /* Kanit-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F59B6C63668643E4B03CC626 /* Kanit-Regular.ttf */; };
 		D61FFEB5107C48998847C82D /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6127D662BD00443892523DE2 /* Montserrat-Regular.ttf */; };
 		F27E7D43EB88439D83A1D8F0 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D91A66CEFBD24D57A6D9045A /* Roboto-Regular.ttf */; };
 /* End PBXBuildFile section */
@@ -46,13 +46,13 @@
 		5709B34CF0A7D63546082F79 /* Pods-filmAppChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-filmAppChallenge.release.xcconfig"; path = "Target Support Files/Pods-filmAppChallenge/Pods-filmAppChallenge.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-filmAppChallenge-filmAppChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-filmAppChallenge-filmAppChallengeTests.debug.xcconfig"; path = "Target Support Files/Pods-filmAppChallenge-filmAppChallengeTests/Pods-filmAppChallenge-filmAppChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-filmAppChallenge.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-filmAppChallenge.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6127D662BD00443892523DE2 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Regular.ttf"; path = "../assets/fonts/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = filmAppChallenge/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-filmAppChallenge-filmAppChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-filmAppChallenge-filmAppChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-filmAppChallenge-filmAppChallengeTests/Pods-filmAppChallenge-filmAppChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
+		D91A66CEFBD24D57A6D9045A /* Roboto-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Regular.ttf"; path = "../assets/fonts/Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		E4E076034660FCD07860C898 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = filmAppChallenge/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		F59B6C63668643E4B03CC626 /* Kanit-Regular.ttf */ = {isa = PBXFileReference; name = "Kanit-Regular.ttf"; path = "../assets/fonts/Kanit-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		6127D662BD00443892523DE2 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; name = "Montserrat-Regular.ttf"; path = "../assets/fonts/Montserrat-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		D91A66CEFBD24D57A6D9045A /* Roboto-Regular.ttf */ = {isa = PBXFileReference; name = "Roboto-Regular.ttf"; path = "../assets/fonts/Roboto-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F59B6C63668643E4B03CC626 /* Kanit-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Kanit-Regular.ttf"; path = "../assets/fonts/Kanit-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,15 +161,15 @@
 			sourceTree = "<group>";
 		};
 		F9F8FCA63F1F43B99341DB6E /* Resources */ = {
-			isa = "PBXGroup";
+			isa = PBXGroup;
 			children = (
 				F59B6C63668643E4B03CC626 /* Kanit-Regular.ttf */,
 				6127D662BD00443892523DE2 /* Montserrat-Regular.ttf */,
 				D91A66CEFBD24D57A6D9045A /* Roboto-Regular.ttf */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
 			path = "";
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
