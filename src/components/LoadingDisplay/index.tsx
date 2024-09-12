@@ -5,7 +5,7 @@ import colors from '../../theme/colors';
 
 export const LoadingDisplay: React.FC = () => {
   return (
-    <LoadingContainer>
+    <LoadingContainer testID="loading-display">
       <ActivityIndicator size="large" color={colors.primary} />
     </LoadingContainer>
   );

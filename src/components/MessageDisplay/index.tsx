@@ -4,11 +4,12 @@ import colors from '../../theme/colors';
 
 interface MessageDisplayProps {
   message: string;
+  testID?: string;
 }
 
-const MessageDisplay: React.FC<MessageDisplayProps> = ({ message }) => {
+const MessageDisplay: React.FC<MessageDisplayProps> = ({ message, testID }) => {
   return (
-    <Container>
+    <Container testID={testID}>
       <MessageText>{message}</MessageText>
     </Container>
   );

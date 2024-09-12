@@ -43,7 +43,12 @@ export default function FilmDetailScreen() {
 
   if (isLoading) return <LoadingDisplay />;
   if (error || !movieDetails || !imageConfig)
-    return <MessageDisplay message={'Failed to load movie details.'} />;
+    return (
+      <MessageDisplay
+        message={'Failed to load movie details.'}
+        testID="message-display"
+      />
+    );
 
   const backdropUrl = `${imageConfig.secure_base_url}${imageConfig.backdrop_sizes[2]}${movieDetails.backdrop_path}`;
   const dynamicStyles = getStylesByIndex(genreIndex);
