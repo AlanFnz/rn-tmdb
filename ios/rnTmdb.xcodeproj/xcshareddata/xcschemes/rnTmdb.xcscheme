@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "filmAppChallenge.app"
-               BlueprintName = "filmAppChallenge"
-               ReferencedContainer = "container:filmAppChallenge.xcodeproj">
+               BuildableName = "rnTmdb.app"
+               BlueprintName = "rnTmdb"
+               ReferencedContainer = "container:rnTmdb.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "filmAppChallengeTests.xctest"
-               BlueprintName = "filmAppChallengeTests"
-               ReferencedContainer = "container:filmAppChallenge.xcodeproj">
+               BuildableName = "rnTmdbTests.xctest"
+               BlueprintName = "rnTmdbTests"
+               ReferencedContainer = "container:rnTmdb.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "filmAppChallenge.app"
-            BlueprintName = "filmAppChallenge"
-            ReferencedContainer = "container:filmAppChallenge.xcodeproj">
+            BuildableName = "rnTmdb.app"
+            BlueprintName = "rnTmdb"
+            ReferencedContainer = "container:rnTmdb.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "filmAppChallenge.app"
-            BlueprintName = "filmAppChallenge"
-            ReferencedContainer = "container:filmAppChallenge.xcodeproj">
+            BuildableName = "rnTmdb.app"
+            BlueprintName = "rnTmdb"
+            ReferencedContainer = "container:rnTmdb.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
